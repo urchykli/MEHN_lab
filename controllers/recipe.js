@@ -1,9 +1,6 @@
 const Recipe = require('../models/Recipe')
 
 module.exports = {
-    nicole: (req, res) => {
-        res.render("nicole")
-    },
     create: (req, res) => {
         Recipe.create({
             title: req.body.recipe.title,
@@ -27,18 +24,19 @@ module.exports = {
         })
     },
     update: (req, res) => {
+        let { description } = req.body.recipe
         Recipe.findOne({ _id: req.params.id})
         .then(recipe => {
-            recipe.description = req.body.recipe.description
-        })
-        recipe.save(err => {
-            res.redirect(`recipe/${recipe._id}`)
-        })
+            recipe.description = description
+        }).finally(recipe => {res.redirect(`recipe/${recipe._id}`)})
     },
     delete: (req, res) => {
         Recipe.findOneAndRemove({ _id: req.params.id })
         .then( () => {
             res.redirect('/')
         })
+    },
+    edit: (req, res) => {
+        res.render('recipe/edit', {id: req.params.id})
     }
 }

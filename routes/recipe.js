@@ -7,6 +7,6 @@ router.get('/new', recipeController.new)
 router.get('/:id', recipeController.show)
 router.patch('/:id', recipeController.update)
 router.delete('/:id', recipeController.delete)
-router.get('/nicole', recipeController.nicole)
+router.get('/:id/edit', recipeController.edit)
 
 module.exports = router

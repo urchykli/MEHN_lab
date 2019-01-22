@@ -1,47 +1,49 @@
 {{#if recipes}}
-    <ul class="recipes">
-        {{#each recipes}}
-        <li>
-            <div class="card">
-                <div class="date-user">
-                    Created by: {{ user }} 
-                    at {{ createdAt }}
-                </div>
-                <div class="title">
-                    {{ title }}
-                </div>
-                <div class="description">
-                    {{ description }}
-                </div>
-                <div class="ingredients-list">
-                    <h4>Ingredients:</h4>
-                    {{#if ingredients}}
-                        <ul class="ingredients">
-                            {{#each ingredients}}
-                                <li>{{ this }}</li>
-                            {{/each}}
-                        </ul>
-                    {{/if}}
-                </div>
-                <div class="instructions-list">
-                    {{#if instructions}}
-                        <ol class="instructions">
-                            {{#each instructions}}
-                                <li>{{ this }}</li>
-                            {{/each}}
-                        </ol>
-                    {{/if}}
-                </div>
-                <div class="button">
-                    <input type="submit" value='Update' class='btn'>
-                </div>
-                <div class="button">
-                    <form method="POST" action="/recipe/{{id}}?_method=DELETE" class="recipe-form">
-                        <input type="submit" value='Delete' class='btn'>
-                    </form>
-                </div>
+<ul class="recipes">
+    {{#each recipes}}
+    <li>
+        <div class="card">
+            <div class="date-user">
+                Created by: {{ user }}
+                at {{ createdAt }}
             </div>
-        </li>
-        {{/each}}
-    </ul>
+            <div class="title">
+                {{ title }}
+            </div>
+            <div class="description">
+                {{ description }}
+            </div>
+            <div class="ingredients-list">
+                <h4>Ingredients:</h4>
+                {{#if ingredients}}
+                <ul class="ingredients">
+                    {{#each ingredients}}
+                    <li>{{ this }}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+            <div class="instructions-list">
+                {{#if instructions}}
+                <ol class="instructions">
+                    {{#each instructions}}
+                    <li>{{ this }}</li>
+                    {{/each}}
+                </ol>
+                {{/if}}
+            </div>
+            <div class="button">
+                <form method="GET" action="/recipe/{{id}}/edit" class="recipe-form">
+                    <input type="submit" value='Update' class='btn'>
+                </form>
+            </div>
+            <div class="button">
+                <form method="POST" action="/recipe/{{id}}?_method=DELETE" class="recipe-form">
+                    <input type="submit" value='Delete' class='btn'>
+                </form>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>
 {{/if}}
