@@ -1,11 +1,21 @@
 <div class="form-container">
 	<h4>New Recipe</h4>
 	<form action="/recipe" method="POST" class="recipe-form">
-	<p class="input-field">
-		<textarea name="recipe[title]" cols="30" rows="10" placeholder="Title"></textarea>
-	</p>
-	<p class='input-field'>
-		<input type="submit" value='Submit' class='btn'>
-	</p>
+		<p class="input-field">
+			<textarea name="recipe[title]" cols="30" rows="1" placeholder="Title"></textarea>
+		</p>
+		<p class="input-field">
+			<textarea name="recipe[description]" cols="30" rows="2" placeholder="Description"></textarea>
+		</p>
+		</p>
+		<p class="input-field">
+			<textarea name="recipe[ingredients]" cols="30" rows="10" placeholder="Ingredients (separated by commas)"></textarea>
+		</p>
+		<p class="input-field">
+			<textarea name="recipe[instructions]" cols="30" rows="10" placeholder="Instructions (separate each step by a comma)"></textarea>
+		</p>
+		<p class='input-field'>
+			<input type="submit" value='Submit' class='btn'>
+		</p>
 	</form>
 </div>
