@@ -4,10 +4,16 @@ module.exports = {
     create: (req, res) => {
         Recipe.create({
             title: req.body.recipe.title,
-            description: req.body.recipe.description,
-            ingredients: req.body.recipe.ingredients,
-            instructions: req.body.recipe.instructions
+            // description: req.body.recipe.description,
+            // ingredients: req.body.recipe.ingredients,
+            // instructions: req.body.recipe.instructions
         })
+        .then(recipe => {
+            res.redirect(`recipe/${recipe._id}`)
+        })
+    },
+    new: (req, res) => {
+        res.render('recipe/new')
     },
     show: (req, res) => {
         Recipe.findOne({ _id: req.params.id })

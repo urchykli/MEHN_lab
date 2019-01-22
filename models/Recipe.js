@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 const Recipe = new Schema({
 	title: String,
 	description: String,
-	ingredients: Array,
-	instructions: Array,
+	ingredients: [String],
+	instructions: [String],
 	createdAt: {
 		type: Date,
 		default: Date.now()
