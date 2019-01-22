@@ -1,6 +1,9 @@
 const Recipe = require('../models/Recipe')
 
 module.exports = {
+    nicole: (req, res) => {
+        res.render("nicole")
+    },
     create: (req, res) => {
         Recipe.create({
             title: req.body.recipe.title,
@@ -32,10 +35,10 @@ module.exports = {
             res.redirect(`recipe/${recipe._id}`)
         })
     },
-    destroy: (req, res) => {
-        Recipe.remove({ _id: req.params.id })
-        recipe.save(err => {
-            res.redirect(`/`)
+    delete: (req, res) => {
+        Recipe.findOneAndRemove({ _id: req.params.id })
+        .then(recipe => {
+            res.redirect('/')
         })
     }
 }
