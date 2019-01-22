@@ -1,5 +1,5 @@
 const mongoose = require("../db/connection")
-cost Schema = mongoose.Schema
+const Schema = mongoose.Schema
 
 const Recipe = new Schema({
 	title: String,

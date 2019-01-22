@@ -1,6 +1,6 @@
 const Recipe = require('../models/Recipe')
 
-mondule.exports = {
+module.exports = {
     index: (req, res) => {
         Recipe.find({})
         .sort({ createdAt: -1 })

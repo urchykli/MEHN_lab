@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 hbs.registerPartials(__dirname + "/views/partials");
-
+app.use(express.static("public"))
 app.set("view engine", "hbs");
 
 app.use(require("./routes/index.js"));
