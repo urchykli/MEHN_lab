@@ -12,8 +12,9 @@ module.exports = {
     show: (req, res) => {
         Recipe.findOne({ _id: req.params.id })
         .populate("user")
-        .exec(function(err, recipe) {
-            res.render("recipe/show", recipe)
+        .then(recipe => {
+            console.log(recipe)
+            res.render("recipe/show", { recipe })
         })
     },
     update: (req, res) => {

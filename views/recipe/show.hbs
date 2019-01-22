@@ -1,0 +1,33 @@
+{{#if recipe}}
+<div class="card">
+    <div class="date-user">
+        Created by: {{ recipe.user }}
+        at {{ recipe.createdAt }}
+    </div>
+    <div class="title">
+        {{ recipe.title }}
+    </div>
+    <div class="description">
+        {{ recipe.description }}
+    </div>
+    <div class="ingredients-list">
+        <h4>Ingredients:</h4>
+        {{#if recipe.ingredients}}
+        <ul class="ingredients">
+            {{#each recipe.ingredients}}
+            <li>{{ this }}</li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </div>
+    <div class="instructions-list">
+        {{#if recipe.instructions}}
+        <ol class="instructions">
+            {{#each recipe.instructions}}
+            <li>{{ this }}</li>
+            {{/each}}
+        </ol>
+        {{/if}}
+    </div>
+</div>
+{{/if}}
