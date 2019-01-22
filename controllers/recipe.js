@@ -37,7 +37,7 @@ module.exports = {
     },
     delete: (req, res) => {
         Recipe.findOneAndRemove({ _id: req.params.id })
-        .then(recipe => {
+        .then( () => {
             res.redirect('/')
         })
     }
