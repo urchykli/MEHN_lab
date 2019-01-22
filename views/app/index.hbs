@@ -1,5 +1,3 @@
-
-
 {{#if recipes}}
     <ul class="recipes">
         {{#each recipes}}
@@ -33,6 +31,14 @@
                             {{/each}}
                         </ol>
                     {{/if}}
+                </div>
+                <div class="button">
+                    <input type="submit" value='Update' class='btn'>
+                </div>
+                <div class="button">
+                    <form action="/" method="DELETE" class="recipe-form">
+                        <input type="submit" value='Delete' class='btn'>
+                    </form>
                 </div>
             </div>
         </li>

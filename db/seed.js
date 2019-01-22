@@ -12,4 +12,9 @@ Recipe.create({
     description: "It's popcorn",
     ingredients: ["unpopped popcorn", "butter", "salt"],
     instructions: ["use microwave"]
+}, {
+    title: "Corned Spaghetti",
+    description: "Yummmmmmmm",
+    ingredients: ["corn", "spaghetti"],
+    instructions: ["cook corn", "cook spaghetti", "mix it up"]
 })
