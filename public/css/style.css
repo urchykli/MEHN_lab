@@ -6,38 +6,48 @@ body {
 /* SECTIONS */
 
 aside {
-    border: red 1px solid;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 5px auto;
     padding: 0 10px;
     width: 25%;
 }
 
 main {
-    border: blue 1px solid;
     width: 75%;
 }
 
 /* NAV BAR */
 
+.navbar {
+    background-color: #fcf8c8;
+    border-radius: 10px;
+    padding: 10px;
+}
+
 .navtitle {
+    color: #F9ED69;
     display: flex;
     font-family: 'Pacifico', cursive;
+    font-size: 60px;
     justify-content: center;
     margin: 0 auto;
+    text-shadow: -3px 0 #26a300, 0 3px #26a300, 3px 0 #26a300, 0 -3px #26a300;
+    transform: rotate(-20deg);
 }
 
 .navsub {
     border-bottom: 2px solid #26a300;
+    color: #26a300;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 300;
     margin: 0 0 15px 0;
-    padding: 0 0 20px 0;
+    padding: 25px;
     text-align: center;
 }
 
 .navlink {
+    color: #99583C;
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
@@ -60,8 +70,28 @@ main {
     padding: 0;
 }
 
+.date-user {
+    font-size: 12px;
+}
+
 .card {
-    background-color: #f7e7c5;
+    background-color: #f9d4c4;
     border-radius: 10px;
-    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding: 20px;
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    padding: 15px 0 10px 0;
+}
+
+.ingredients-list {
+    padding: 0 0 20px 0;
+}
+
+.instructions-list {
+    padding: 0 0 15px 0;
 }
