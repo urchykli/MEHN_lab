@@ -37,5 +37,8 @@ module.exports = {
         recipe.save(err => {
             res.redirect(`/`)
         })
+    },
+    nicole: (req,res) => {
+        res.send('hello')
     }
 }
