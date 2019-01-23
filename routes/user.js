@@ -2,8 +2,8 @@ const express = require('express')
 const router = express.Router()
 const userController = require('../controllers/user')
 
-router.get('/new', userController.signup)
-router.post('/signup', userController.create)
+router.get('/signup', userController.signup)
+router.post('/signup', userController.createSignup)
 router.get('/login', userController.login)
 router.post('/login', userController.createLogin)
 

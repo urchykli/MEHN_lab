@@ -3,9 +3,9 @@ const Recipe = require('../models/Recipe')
 const passport = require('passport')
 
 module.exports = {
-	create: (req, res, next) => {
+	createSignup: (req, res, next) => {
 		var signupStrategy = passport.authenticate('local-signup', {
-			succussRedirect: '/user/new',
+			succussRedirect: '/user/signup',
 			failurRedirect: '/user/signup',
 			failureFlash: true
 		})
@@ -19,7 +19,7 @@ module.exports = {
 	},
 	createLogin: (req, res, next) => {
 		var loginProperty = passport.authenticate('local-login', {
-			succussRedirect: '/',
+			succussRedirect: '/login',
 			failurRedirect: '/login',
 			failureFlash: true
 		})
