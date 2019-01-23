@@ -23,9 +23,9 @@ app.use(require("./routes/index.js"));
 app.use(session({secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS'}))
 app.use(flash())
 
-// require('./config/passport')(passport)
-// app.use(passport.initialize())
-// app.use(passport.session())
+require('./config/passport')(passport)
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use(function(req, res, next) {
   res.locals.currentUser = req.user

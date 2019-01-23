@@ -4,18 +4,24 @@ const Recipe = require('../models/Recipe')
 
 module.exports = {
 	create: (req, res) => {
-		User.create({
-				username: req.body.user.username,
-				email: req.body.user.email,
-				password: req.body.user.password,
+		var signupStrategy = passport.authenticate('local-signup', {
+			succussRedirect: '/',
+			failurRedirect: '/signup',
+			failureFlash: true
 		})
-		.then(user => {
-			res.redirect(`/`)
-	})},
+		return signupStrategy(req, res)
+	},
 	signup: (req, res) => {
 		res.render('user/signup')
 	},
 	login: (req, res) => {
 		res.render('user/login')
+	},
+	createLogin: (req, res) => {
+		// take input & compare to database
+
+		// if no match - return to login page w/ flash message
+
+		// if match - return to homepage
 	}
 }
