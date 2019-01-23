@@ -14,5 +14,8 @@ module.exports = {
 	})},
 	signup: (req, res) => {
 		res.render('user/signup')
+	},
+	login: (req, res) => {
+		res.render('user/login')
 	}
 }

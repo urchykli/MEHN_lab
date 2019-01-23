@@ -3,9 +3,7 @@ const hbs = require("hbs");
 const bodyParser = require("body-parser");
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
-const hbs = require("hbs")
 const cookieParser = require('cookie-parser')
-const bodyParser = require('body-parser')
 const session = require('express-session')
 const passport = require('passport')
 
@@ -25,9 +23,9 @@ app.use(require("./routes/index.js"));
 app.use(session({secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS'}))
 app.use(flash())
 
-require('./config/passport')(passport)
-app.use(passport.initialize())
-app.use(passport.session())
+// require('./config/passport')(passport)
+// app.use(passport.initialize())
+// app.use(passport.session())
 
 app.use(function(req, res, next) {
   res.locals.currentUser = req.user
