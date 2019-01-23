@@ -4,10 +4,9 @@ const Schema = mongoose.Schema
 
 const User = new Schema({
 	local: {
-		username: String,
-	email: String,
-	password: String,
-	recipes: [
+		email: String,
+		password: String,
+		recipes: [
 			{type: Schema.Types.ObjectId,
 			ref: "Recipe"}
 		]

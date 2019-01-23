@@ -9,6 +9,8 @@ const passport = require('passport')
 
 const app = express();
 
+app.use(flash())
+
 hbs.registerPartials(__dirname + "/views/partials");
 
 app.use(express.static("public"))
@@ -21,7 +23,6 @@ app.use(methodOverride("_method"))
 
 app.use(require("./routes/index.js"));
 app.use(session({secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS'}))
-app.use(flash())
 
 require('./config/passport')(passport)
 app.use(passport.initialize())
