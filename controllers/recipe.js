@@ -27,8 +27,8 @@ module.exports = {
         let { description } = req.body.recipe
         Recipe.findOneAndUpdate(
             { _id: req.params.id}, 
-            {$set: {description: description}})
-        .then((req, res) => {res.redirect('/')})
+            {$set:{description:description}})
+        .then(() => {res.redirect('/')})
     },
     delete: (req, res) => {
         Recipe.findOneAndRemove({ _id: req.params.id })
