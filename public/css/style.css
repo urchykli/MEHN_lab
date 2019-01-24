@@ -24,6 +24,9 @@ main {
     background-color: #fcf8c8;
     border-radius: 10px;
     padding: 10px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 }
 
 .navtitle {
@@ -60,19 +63,44 @@ main {
 
 /* MAIN CONTENT */
 
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn {
+    border: 1px solid #26a300;
+    border-radius: 10px;
+    color: #26a300;
+    font-size: 12px;
+    margin: 10px 0 0 0;
+}
+
+.btn:hover {
+    background-color: #26a300;
+    color: #FFF;
+}
+
+.btn-recipe {
+    background-color: #f9d4c4;
+    border: 1px solid #2C1A11;
+    color: #2C1A11;
+    font-size: 12px;
+    margin: 10px 10px 0 0;
+}
+
+.btn-recipe:hover {
+    background-color: #2C1A11;
+    color: #f9d4c4;
+    font-size: 12px;
+    margin: 10px 0 0 0;
+}
+
 .container {
     display: flex;
     justify-content: center;
     padding: 10px;
-}
-
-.recipes {
-    list-style: none;
-    padding: 0;
-}
-
-.date-user {
-    font-size: 12px;
 }
 
 .card {
@@ -84,10 +112,26 @@ main {
     width: 100%;
 }
 
-.title {
-    font-family: 'Pacifico', cursive;
-    font-size: 30px;
-    padding: 15px 0 10px 0;
+.date-user {
+    font-size: 12px;
+}
+
+.form-group {
+    padding: 0 0 10px 0;
+}
+
+h3 {
+    background-color: #C8B2CB;
+    border: 1px solid #1D0C1F;
+    border-radius: 10px;
+    color: #1D0C1F;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 25px;
+    padding: 5px 50px 5px 50px;
+    text-align: center;
+    width: 100%;
 }
 
 .ingredients-list {
@@ -96,4 +140,33 @@ main {
 
 .instructions-list {
     padding: 0 0 15px 0;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.login {
+    color: #26a300;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.recipes {
+    list-style: none;
+    padding: 0;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    padding: 15px 0 10px 0;
 }
